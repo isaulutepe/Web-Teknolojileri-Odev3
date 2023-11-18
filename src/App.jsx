@@ -70,26 +70,26 @@ function App() {
     {
       baslik: "Asp .net",
       url: "wwww.google.com.tr",
-      yazar: "Asım Yüksel",
+      yazar: "Mehmet kılıc",
       yorum_sayisi: 2,
-      puan: 5,
-      id: 1,
+      puan: 100,
+      id: 2,
     },
     {
       baslik: "Html - Css",
       url: "wwww.google.com.tr",
-      yazar: "Asım Yüksel",
+      yazar: "Arda Çankaya",
       yorum_sayisi: 2,
-      puan: 5,
-      id: 1,
+      puan: 100,
+      id: 3,
     },
     {
       baslik: "Matematik",
       url: "wwww.google.com.tr",
-      yazar: "Asım Yüksel",
+      yazar: "Kurtuluş Oğan",
       yorum_sayisi: 2,
       puan: 5,
-      id: 1,
+      id: 4,
     }
   ];
   React.useEffect(() => {
@@ -100,7 +100,10 @@ function App() {
     //Filter da map ile aynı mantıkla çalışırdiziyi gezer.
     //Filter arkada bir for çalıştırır ve her değeri tek tek yazi değişkenşnde tutar.
     function (yazi) {
-      return yazi.baslik.toLowerCase().includes(aramaMetni.toLowerCase()); //includes Metin içinde kelime geçişini yakalar.
+      return yazi.baslik.toLowerCase().includes(aramaMetni.toLowerCase()) 
+      || yazi.yazar.toLowerCase().includes(aramaMetni.toLowerCase());
+      
+      //includes Metin içinde kelime geçişini yakalar.
       //ToLowerCase ifadeleri eklendiği için artık ne yazılırsa yazılsın küçük harf olarak arıyor, aranan değeride küçük harfe çeviriyor bu da
       //büyük küçük harf duyarlılığını ortadan kaldrımış oluyor.
     }
